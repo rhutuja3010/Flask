@@ -1,0 +1,37 @@
+1. Transform the json data into a tabular structure (csv) USING CORE PYTHON as shown here:
+  ["title", "smdName", "organizationName", "sourceType", "sourceUrl", "icarUrl", "keywords", language]
+
+2. Do the following data analysis using Pandas and matplotlib or seaborn:
+  a. Conduct a detailed analysis on missing values?
+  b. Calculate the counts of each languages and show it in a count plot
+  c. Find distinct organization names and calculate number of records against each
+   and show it in a count plot
+  d. Find distinct smdnames and calculate number of records against each and show 
+  it in a count plot
+  e. Extract list of video IDs from icarUrl field. For example, video idea in ica url
+  https://krishi.icar.gov.in/video/watch/3748 is 3748. Similarly extract all
+  f. Search for a string [case-insensitive] in 'keywords' field and return count 
+  (if string found) in each distinct organization name
+  g. Search for a string [case-insensitive] in 'title' field and return count 
+  (if string found) in each distinct organization name
+  h. What is the percentage of organization names pertaining to 'Pulses Research' 
+  against the total?
+  i. What is the percentage of organization names pertaining to 'Pulses Research'
+  against the general 'research' oriented organization names?
+  j. What is the percentage of research based organization names against total?
+  k. How many distinct titles have non-english characters?
+
+3. Create a framework in flask and expose services so that I get answers to each 
+of the above questions by API calls.
+   Examples: https://localhost:8080 should list various links
+       - getDistinctOrganizationNames
+			 - getSmdNames
+			 - getVideoIds
+			 - searchStringInKeyword
+			 - searchStringInTitle
+			 - findPercentOrgNamesPulses
+			 - findPercentOrgNamesPulsesAgainstResearch
+			 - findPercentOrgNamesResearch
+https://localhost:8080/getDistinctOrganizationNames should return the answer to 2(b) 
+above in a tabular way
+  ...similar for others.
